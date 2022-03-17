@@ -8,4 +8,5 @@ function getSpeciesByIds(...ids) {
 // usando arrow function
 // const getSpeciesByIds = (...ids) => data.species.filter((animal) => ids.includes(animal.id));
 
+
 module.exports = getSpeciesByIds;
