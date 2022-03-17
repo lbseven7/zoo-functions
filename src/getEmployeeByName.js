@@ -1,7 +1,9 @@
 const { employees } = require('../data/zoo_data');
-function getEmployeeByName(employeeName) {
-  const empregado = employees.find((element) => element.firstName === employeeName || element.lastName === employeeName);
-  return empregado === undefined ? {} : empregado;
+// const data = require('../data/zoo_data');
+
+function getEmployeeByName(name) {
+  const emp = employees.find((nome) => nome.firstName === name || nome.lastName === name);
+  return emp === undefined ? {} : emp;
 }
 
 module.exports = getEmployeeByName;
