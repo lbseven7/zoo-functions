@@ -5,7 +5,6 @@ function getSpeciesByIds(...ids) {
   const animalId = data.species.filter((animal) => ids.includes(animal.id ));
   return animalId;
 }
-
 // usando arrow function
 // const getSpeciesByIds = (...ids) => data.species.filter((animal) => ids.includes(animal.id));
 
