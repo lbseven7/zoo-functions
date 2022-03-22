@@ -10,6 +10,7 @@ function encontraEmpregadoPorId(id) {
   return encontrado;
 }
 
+// busca empregado por nome
 function encontraEmpregadoPorNome(name) {
   const encontraPorNome = employees
   .find((element) => element.firstName === name || element.lastName);
@@ -17,6 +18,23 @@ function encontraEmpregadoPorNome(name) {
     throw new Error('Informações inválidas');
   }
   return encontraEmpregadoPorNome;
+}
+
+// trata os dados do empregado para retorno
+function trataEmpregado(encontradoTodos) {
+  let especies = [];
+  let localizacao = [];
+  encontradoTodos.responsibleFor.forEach((element) => {
+    const especieAnimal = encontraEmpregadoPorId(element);
+    especies.push(especieAnimal.name);
+    localizacao.push(especieAnimal.location);
+  })
+  const objetoParaRetornar = {
+    id: encontradoTodos.id,
+    fullName: `${encontradoTodos.firstName} ${encontradoTodos.lastName}`,
+    locations: localizacao,
+  };
+  return objetoParaRetornar;
 }
 
 function getEmployeesCoverage(employee) {
