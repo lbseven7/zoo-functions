@@ -10,6 +10,15 @@ function encontraEmpregadoPorId(id) {
   return encontrado;
 }
 
+function encontraEmpregadoPorNome(name) {
+  const encontraPorNome = employees
+  .find((element) => element.firstName === name || element.lastName);
+  if (!encontraEmpregadoPorNome) {
+    throw new Error('Informações inválidas');
+  }
+  return encontraEmpregadoPorNome;
+}
+
 function getEmployeesCoverage(employee) {
 
 }
