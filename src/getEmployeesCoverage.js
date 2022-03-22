@@ -1,4 +1,4 @@
-const { employees } = require('../data/zoo_data');
+const { employees, species } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
 // busca empregado por id
@@ -17,7 +17,7 @@ function encontraEmpregadoPorNome(name) {
   if (!encontraEmpregadoPorNome) {
     throw new Error('Informações inválidas');
   }
-  return encontraEmpregadoPorNome;
+  return encontraPorNome;
 }
 
 // trata os dados do empregado para retorno
@@ -33,8 +33,13 @@ function trataEmpregado(encontradoTodos) {
     id: encontradoTodos.id,
     fullName: `${encontradoTodos.firstName} ${encontradoTodos.lastName}`,
     locations: localizacao,
-  };
+  }; 
   return objetoParaRetornar;
+}
+
+function pegaEspeciesPorId(id) {
+  const especieId = species.find((element) => element.id === id);
+  return especieId;
 }
 
 function getEmployeesCoverage(employee) {
