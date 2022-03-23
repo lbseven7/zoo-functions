@@ -19,5 +19,5 @@ function countAnimals(animal) {
     .filter((element) => element.name === animal.specie)[0]
     .residents.filter((element) => element.sex === animal.sex).length;
 }
-console.log(countAnimals({ specie: 'LIONS'.toLowerCase(), sex: 'male' }));
+
 module.exports = countAnimals;
