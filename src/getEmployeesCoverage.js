@@ -52,9 +52,9 @@ function trataEmpregado(encontradoTodos) {
 function getEmployeesCoverage(employee) {
   let empregadoEncontrado = {};
   if (!employee) {
-    empregadoEncontrado = employees.map((element) => trataEmpregado(element));
-  }
-  else if (employee.id) {
+    empregadoEncontrado = employees.map((element) =>
+      trataEmpregado(element));
+  } else if (employee.id) {
     const encontrado = encontraEmpregadoPorId(employee.id); // RETORNA TODOS
     empregadoEncontrado = trataEmpregado(encontrado);
   } else {
@@ -63,8 +63,8 @@ function getEmployeesCoverage(employee) {
   }
   return empregadoEncontrado;
 }
-// console.log(getEmployeesCoverage({ name: 'Stephanie' })); // NÃO funciona
-// console.log(getEmployeesCoverage({ name: 'Spry' })); // NÃO funciona
+// console.log(getEmployeesCoverage({ name: 'Stephanie' })); // funciona
+// console.log(getEmployeesCoverage({ name: 'Spry' })); // funciona
 // console.log('Imprime Ardith Azevado');
 // console.log(getEmployeesCoverage({ id: 'c1f50212-35a6-4ecd-8223-f835538526c2' })); // funciona
 // console.log('Imprime todos');
