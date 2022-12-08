@@ -8,5 +8,5 @@ function getAnimalsOlderThan(animal, age) {
 
   return animalName;
 }
-
+console.log(getAnimalsOlderThan('lions', 7));
 module.exports = getAnimalsOlderThan;
